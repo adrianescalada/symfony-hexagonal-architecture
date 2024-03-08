@@ -22,3 +22,14 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Command\CreateEntitiesCommand:
+        tags:
+            - { name: 'console.command' }
+            
+    App\Context\Users\Domain\UserRepository: '@App\Context\Users\Infrastructure\DoctrineUserRepository'
+    App\Context\Groups\Domain\GroupRepository: '@App\Context\Groups\Infrastructure\DoctrineGroupRepository' 
+
+    App\Context\Shared\Infrastructure\Symfony\ExceptionListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception }

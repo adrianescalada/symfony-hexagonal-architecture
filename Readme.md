@@ -1,39 +1,53 @@
-# 🐳 Docker + PHP 8.2 + MySQL + Nginx + Symfony 6.2 Boilerplate
+
+<h1 align="center">Symfony 6.3 - Mysql - Docker - Hexagonal Architecture</h1> 
+
+### 🐳 Docker + PHP 8.2 + MySQL + Nginx + Symfony 6.3
 
 ## Description
 
-This is a complete stack for running Symfony 6.2 into Docker containers using docker-compose tool.
+This is a complete stack for running Symfony 6.3 into Docker containers using docker compose tool.
 
 It is composed by 4 containers:
 
 - `nginx`, acting as the webserver.
 - `php`, the PHP-FPM container with the 8.2 version of PHP.
 - `db` which is the MySQL database container with a **MySQL 8.0** image.
+- `phpmyadmin` is a free software tool written in PHP, intended to handle the administration of MySQL over the Web.
 
-## Installation
+### :heavy_check_mark: Features
 
-1. 😀 Clone this repo.
+<li>User management (Registration, cancellation, Modification)</li>
+<li>User Group Management (Registration, Cancellation, Modification)</li>
+<li>User search engine with pagination</li>
+<li>Migration command</li>
+<li>Factory creation command </li>
 
-2. If you are working with Docker Desktop for Mac, ensure **you have enabled `VirtioFS` for your sharing implementation**. `VirtioFS` brings improved I/O performance for operations on bind mounts. Enabling VirtioFS will automatically enable Virtualization framework.
+### :heavy_check_mark:	Docker
 
-3. Create the file `./.docker/.env.nginx.local` using `./.docker/.env.nginx` as template. The value of the variable `NGINX_BACKEND_DOMAIN` is the `server_name` used in NGINX.
+- <code>docker compose build</code>
+- <code>docker compose up -d</code>
 
-4. Go inside folder `./docker` and run `docker compose up -d` to start containers.
+### :heavy_check_mark:	Facilities (Optionals)
 
-5. You should work inside the `php` container. This project is configured to work with [Remote Container](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension for Visual Studio Code, so you could run `Reopen in container` command after open the project.
+- <code>php bin/console doctrine:migrations:migrate</code>
 
-6. Inside the `php` container, run `composer install` to install dependencies from `/var/www/symfony` folder.
+- <code>php bin/console app:create-entities</code>
 
-7. Use the following value for the DATABASE_URL environment variable:
+<p>Optional Command </p>
 
-```
-DATABASE_URL=mysql://app_user:helloworld@db:3306/app_db?serverVersion=8.0.33
-```
+- <code>php bin/console app:create-group</code>
+- <code>php bin/console app:create-user</code>
+- <code>bin/phpunit --testdox</code>
 
-You could change the name, user and password of the database in the `env` file at the root of the project.
 
-## To learn more
+### :rocket: Technologies Used
 
-I have recorded a Youtube session explaining the different parts of this project. You could see it here:
+##### :heart: Built With:
 
-[Boilerplate para Symfony basado en Docker, NGINX y PHP8](https://youtu.be/A82-hry3Zvw)
+* ![Docker](https://img.shields.io/badge/Docker-<COLOR>?style=for-the-badge&logo=docker&logoColor=white) [Docker](https://www.docker.com/)
+* ![Symfony 6.3](https://img.shields.io/badge/Symfony-<COLOR>?style=for-the-badge&logo=Symfony&logoColor=white) [Symfony](https://Symfony.com/)
+* ![Mysql](https://img.shields.io/badge/Mysql-<COLOR>?style=for-the-badge&logo=mysql&logoColor=white) [Mysql](https://www.mysql.com/)
+
+### :heavy_check_mark: Images:
+
+![Test](/test.png)
