@@ -16,8 +16,8 @@ It is composed by 4 containers:
 
 ### :heavy_check_mark: Features
 
-<li>User management (Registration, cancellation, Modification)</li>
-<li>User Group Management (Registration, Cancellation, Modification)</li>
+<li>User management (new, edit, delete)</li>
+<li>User Group Management (new, edit, delete)</li>
 <li>User search engine with pagination</li>
 <li>Migration command</li>
 <li>Factory creation command </li>

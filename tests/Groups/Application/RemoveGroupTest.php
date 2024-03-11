@@ -20,7 +20,7 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 class RemoveGroupTest extends KernelTestCase
 {
     const UUID = '0ef4076c-3824-451a-ae83-6bcfa45c9819';
-    const USER_NAME = 'cheli';
+    const USER_NAME = 'Jan';
     const GROUP_NAME = 'admin';
     private GroupRepository $repository;
 
